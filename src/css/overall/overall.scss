@@ -1,0 +1,148 @@
+:root {
+  // Шрифты
+  --font-main: "Unbounded", sans-serif; // главный шрифт на странице
+
+  // Контейнер
+  --container-width: 1500px; // ширина контейнера
+  --container-step: 20px; // падинги по бокам на пк
+  --container-step-tablet: 15px; // падинги по бокам на планшетах
+  --container-step-mobile: 10px; // падинги по бокам на мобилках
+  --container: calc(var(--container-width) + (var(--container-step) * 2)); // сам контейнер
+
+  // Цвета
+  --background-page: #fff; // бекграунд страницы
+  --main: #ffffff;
+  --black: #000000;
+  --white: #ffffff;
+  --i: calc(1vw + 1vh);
+
+  --hover: #7B68EE; // цвет при ховере
+  --active: #4169E1; // цвет при активе
+}
+
+// font-size: calc(var(--i) * 2); пример адаптивного шрифта
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--container-step);
+
+  @media (max-width: 991px) {
+    padding: 0 var(--container-step-tablet);
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 var(--container-step-mobile);
+  }
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-main);
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--main);
+  background-color: var(--background-page);
+
+  &_change {}
+}
+
+.main {
+  flex: 1 1 auto;
+
+  &_no-margin {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+
+  & .swiper-pagination-bullet {
+    width: 4px;
+    height: 4px;
+    opacity: .3;
+    border-radius: 50%;
+    margin: 0 !important;
+    background-color: var(--white);
+  }
+
+  & .swiper-pagination-bullet-active {
+    width: 6px;
+    height: 6px;
+    opacity: 1;
+  }
+}
+
+// swiper-button-disabled
+
+// Универсальные классы
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.fw-100 {
+  font-weight: 100;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
